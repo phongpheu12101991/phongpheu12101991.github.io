@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./views/styles/index.css" />
+  </head>
+  <body>
+    <div class="roomcontainer" id="roomcontainer">
+      <div class="exit border text-white text-center" id="exit">Exit</div>
+      <div class="roomname border" id="roomname">room1</div>
+      <div class="roomplayers" id="roomplayers">
+        <div class="team" id="team1">
+          <div class="border skew1 pp"></div>
+          <div class="p1" id="p1">
+            <div class="pname" id="p1name">ppppp</div>
+            <div class="pchar" id="p1char"></div>
+          </div>
+          <div class="border skew1 pp"></div>
+          <div class="p2" id="p2">
+            <div class="pname" id="p2name">ppppp</div>
+            <div class="pimg" id="p2img"></div>
+          </div>
+        </div>
+        <div class="pickmap border" id="pickmap">
+          <div class="setmap" id="setmap">
+            <div class="minimap" id="minimap"></div>
+            <div class="next" id="next">next</div>
+            <div class="prev" id="prev">prev</div>
+          </div>
+          <div class="setturn text-white" id="setturn">50</div>
+          <div class="start" id="start">Start</div>
+        </div>
+        <div class="team" id="team2">
+          <div class="border skew2 pp"></div>
+          <div class="p3" id="p3">
+            <div class="pname" id="p3name">ppppp</div>
+            <div class="pimg" id="p3img"></div>
+          </div>
+          <div class="border skew2 pp"></div>
+          <div class="p4" id="p4">
+            <div class="pname" id="p4name">ppppp</div>
+            <div class="pimg" id="p4img"></div>
+          </div>
+        </div>
+      </div>
+      <div class="chatbullet" id="chatbullet">
+        <div class="chatbox border" id="chatbox">
+          <div class="roommess" id="roommess"></div>
+          <div class="mess" id="mess">
+            <input class="imess" type="text" id="imess" />
+            <button id="send" class="send">Send</button>
+          </div>
+        </div>
+        <div class="pickchar border" id="pickchar"></div>
+        <div class="pickbullet" id="pickbullet">
+          <div class="bulletcollection border" id="bulletcollection">
+            <div class="bb" id="x2">x2</div>
+            <div class="bb" id="hp">hp</div>
+            <div class="bb" id="tele">tele</div>
+          </div>
+          <div class="bulletpicked border" id="bulletpicked">
+            <div class="pick" id="pick1"></div>
+            <div class="pick" id="pick2"></div>
+            <div class="pick" id="pick3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../GameGun/views/screens/roomtest.js"></script>
+  </body>
+</html>

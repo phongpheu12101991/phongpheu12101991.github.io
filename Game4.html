@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GunTroll</title>
+    <link rel="stylesheet" href="Game.css" />
+  </head>
+
+  <body id="body" oncontextmenu="return false;">
+    <div class="all" id="all">
+      <div id="endgame">
+        <div id="winner">WWWWWWWWWWWW</div>
+        <div id="imgwinner">
+          <img src="win.gif" alt="" style="height: 30vh" />
+        </div>
+        <div id="reward">Gold +100</div>
+        <button id="bend">Làm game nữa !!</button>
+      </div>
+      <img src="vvv.gif" alt="" id="bgp" style="width: 100vw; height: 100vh" />
+      <div id="showminiturn">
+        <div id="turn0">Lượt</div>
+        <div id="turn1">Player 1</div>
+        <div id="turn2">Player 2</div>
+      </div>
+      <div id="showturn"></div>
+      <div id="time"></div>
+      <div id="gamecontrol">
+        <div id="move">
+          <img
+            class="arrow"
+            src="left.png"
+            alt=""
+            style="width: 5vw"
+            id="moveleft"
+          />
+          <img
+            class="arrow"
+            src="send.png"
+            alt=""
+            style="width: 5vw"
+            id="moveright"
+          />
+        </div>
+        <div id="power">
+          <div class="powerslide">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="1"
+              class="slider"
+              id="powerRange"
+            />
+            <p id="ppower">Power: <span id="powerfire"></span></p>
+          </div>
+        </div>
+        <div id="bullet">
+          <div class="typeb" id="b1">b1</div>
+          <div class="typeb" id="b2">b2</div>
+          <div class="typeb" id="bs">bs</div>
+        </div>
+        <div id="angle">
+          <button class="bangle" id="upangle">+</button>
+          <div id="showangle"></div>
+          <button class="bangle" id="downangle">-</button>
+        </div>
+      </div>
+      <div id="gamemain">
+        <div id="ground"></div>
+        <img src="earth1.png" alt="" style="width: 300px" id="earth" />
+        <div id="d1">
+          <img
+            id="d2"
+            src="teeth.png"
+            style="width: 20px; height: 20px"
+            alt=""
+          />
+          <div id="player1">
+            <div id="p1">
+              <div id="iplayer1">
+                <img src="c1.png" alt="" style="width: 50px; height: 50px" />
+              </div>
+              <div id="p1name"></div>
+              <div id="damage1"></div>
+              <div id="hp1"><div id="misshp1"></div></div>
+            </div>
+          </div>
+          <div id="player2">
+            <div id="p2">
+              <div id="iplayer2">
+                <img src="r-c2.png" alt="" style="width: 50px; height: 50px" />
+              </div>
+              <div id="p2name"></div>
+              <div id="damage2"></div>
+              <div id="hp2"><div id="misshp2"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCuoUHOPG2Dgy5tQQOOl3ui44yhiRiyhoA",
+      authDomain: "mindgun-b109a.firebaseapp.com",
+      databaseURL: "https://mindgun-b109a.firebaseio.com",
+      projectId: "mindgun-b109a",
+      storageBucket: "mindgun-b109a.appspot.com",
+      messagingSenderId: "629046205185",
+      appId: "1:629046205185:web:118bfd73ce917981679900",
+      measurementId: "G-KLE2RQBNYB",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    let db = firebase.firestore();
+    var database = firebase.database();
+  </script>
+  <script src="Game3.js"></script>
+  <!-- <script src="DataAngle.js"></script> -->
+</html>

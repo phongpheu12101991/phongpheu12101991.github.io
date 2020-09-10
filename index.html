@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>TrollGun</title>
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <link rel="stylesheet" href="Game.css" />
+  </head>
+  <body id="body" oncontextmenu="return false;">
+    <div id="app"></div>
+  </body>
+
+  <!-- loginscreen: start -->
+  <template id="loginscreen">
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <div class="alg">
+      <img src="vv.gif" alt="" id="bgi" style="width: 100vw; height: 100vh" />
+      <div class="border lg">
+        <div class="text-head-m">Đăng nhập MindGun</div>
+        <form action="" id="formlogin">
+          <form-input
+            name="email"
+            type="text"
+            label="Email"
+            class="line-break input-container"
+          ></form-input>
+          <form-input
+            name="password"
+            type="password"
+            label="Password"
+            class="line-break input-container"
+          ></form-input>
+          <div class="d-flex j-sb">
+            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            <span class="link" id="linktoRegister">Đăng kí ngay</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </template>
+  <!-- loginscreen: end -->
+
+  <!-- register-screen: start -->
+  <template id="registerscreen">
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <div class="alg">
+      <img src="vv.gif" alt="" id="bgi" style="width: 100vw; height: 100vh" />
+      <div class="border rg">
+        <div class="text-head-m">Đăng kí tài khoản MindGun</div>
+        <form action="" id="formregister">
+          <form-input
+            name="email"
+            type="text"
+            label="Email"
+            class="line-break input-container"
+          ></form-input>
+          <form-input
+            name="displayname"
+            type="text"
+            label="Display Name"
+            class="line-break input-container"
+          ></form-input>
+          <form-input
+            name="password"
+            type="password"
+            label="Password"
+            class="line-break input-container"
+          ></form-input>
+          <form-input
+            name="Confirmpassword"
+            type="password"
+            label="Confirm Password"
+            class="line-break input-container"
+          ></form-input>
+          <div class="d-flex j-sb">
+            <button type="submit" class="btn btn-primary">Đăng kí</button>
+            <span class="link" id="linktoLogin">Đăng nhập!</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </template>
+  <!-- register-screen: end -->
+  <!-- acc screen -->
+  <template id="accscreen">
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <div class="text-white" id="acc">
+      <div class="d-flex f-c player border" id="player">
+        <div class="accimage" id="accimage"></div>
+
+        <div class="accitem" id="accitem">item</div>
+        <div class="accnamelevel" id="accname">name</div>
+        <div class="accnamelevel" id="acclevel">level</div>
+        <div class="accnamelevel" id="accwinrate"></div>
+        <div class="accnamelevel" id="accemail"></div>
+        <div class="accnamelevel" id="changepassword">Change password</div>
+      </div>
+      <div class="roomlist border" id="listroom">
+        <div class="headroom" id="headroom">Room list</div>
+        <div class="listroom" id="roomlist"></div>
+        <div class="newroom">
+          <button class="bnroom" id="newroom">NewRoom</button>
+          <input class="nnroom border" type="text" id="nnroom" />
+        </div>
+      </div>
+      <div class="fb" id="fb">
+        <button class="goshop" id="signout">Sign Out</button>
+        <div class="friend border" id="friend">
+          <h1>Friends list</h1>
+          <div id="friendlist"></div>
+        </div>
+        <button class="goshop" id="goshop">Shop</button>
+      </div>
+    </div>
+  </template>
+  <!-- end -->
+
+  <!-- room screen -->
+  <template id="roomscreen">
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <div class="roomcontainer" id="roomcontainer">
+      <div class="exit border text-white text-center" id="exit">Exit</div>
+      <div class="roomname border" id="roomname">room1</div>
+      <div class="roomplayers" id="roomplayers">
+        <div class="team" id="team1">
+          <div class="border skew1 pp" id="s1"></div>
+          <div class="p1" id="p1">
+            <div class="pname" id="p1name"></div>
+            <div class="pchar" id="p1char"></div>
+          </div>
+          <div class="border skew1 pp" id="s3"></div>
+          <div class="p3" id="p3">
+            <div class="pname" id="p3name"></div>
+            <div class="pchar" id="p3char"></div>
+          </div>
+        </div>
+        <div class="pickmap border" id="pickmap">
+          <div class="setmap" id="setmap">
+            <div class="minimap" id="minimap"></div>
+            <div class="next" id="next">next</div>
+            <div class="prev" id="prev">prev</div>
+          </div>
+          <div class="setturn text-white" id="setturn">Max turn: 50</div>
+          <div class="start" id="start">Ready</div>
+        </div>
+        <div class="team" id="team2">
+          <div class="border skew2 pp" id="s2"></div>
+          <div class="p2" id="p2">
+            <div class="pname" id="p2name"></div>
+            <div class="pchar" id="p2char"></div>
+          </div>
+          <div class="border skew2 pp" id="s4"></div>
+          <div class="p4" id="p4">
+            <div class="pname" id="p4name"></div>
+            <div class="pchar" id="p4char"></div>
+          </div>
+        </div>
+      </div>
+      <div class="chatbullet" id="chatbullet">
+        <div class="chatbox border" id="chatbox">
+          <div class="roommess" id="roommess"></div>
+          <div class="mess" id="mess">
+            <input class="imess" type="text" id="imess" />
+            <button id="send" class="send">Send</button>
+          </div>
+        </div>
+        <div class="pickchar border" id="pickchar">
+          <char-item cname="c1"></char-item>
+          <char-item cname="c2"></char-item>
+        </div>
+        <div class="pickbullet" id="pickbullet">
+          <div class="bulletcollection border" id="bulletcollection">
+            <div class="bb" id="x2">x2</div>
+            <div class="bb" id="hp">hp</div>
+            <div class="bb" id="tele">tele</div>
+          </div>
+          <div class="bulletpicked border" id="bulletpicked">
+            <div class="pick" id="pick1"></div>
+            <div class="pick" id="pick2"></div>
+            <div class="pick" id="pick3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- room item -->
+  <template id="ritem">
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <div class="ritem hover">
+      <div class="rname" id="rname"></div>
+      <div class="person" id="person"></div>
+    </div>
+  </template>
+
+  <!-- list friend -->
+  <template id="fitem">
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <div class="fitem hover">
+      <div class="fname" id="fname"></div>
+      <div class="fname" id="state"></div>
+    </div>
+  </template>
+
+  <!-- Char item -->
+  <template id="charitem">
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <div class="citem" id="citem"></div>
+  </template>
+
+  <!-- form-input: start -->
+  <template id="forminput">
+    <link rel="stylesheet" href="./views/styles/index.css" />
+    <div id="container" class="d-flex f-c input-container line-break">
+      <label id="label"></label>
+      <input id="input" class="input" />
+    </div>
+    <div id="errorMSG"></div>
+  </template>
+  <!-- form-input: end -->
+
+  <!-- play screen -->
+  <template id="playscreen">
+    <link rel="stylesheet" href="Game.css" />
+    <div class="all" id="all">
+      <img src="vc.gif" alt="" id="bgp" style="width: 100vw; height: 100vh" />
+      <div id="showminiturn">
+        <div id="turn0">Lượt</div>
+        <div id="turn1">Player 1</div>
+        <div id="turn2">Player 2</div>
+      </div>
+      <div id="showturn"></div>
+      <div id="time"></div>
+      <div id="gamecontrol">
+        <div id="move">back == forward</div>
+        <!-- <div id="power"><button id="uppower">+</button>
+        <div id="showpower"></div>
+        <button id="downpower">-</button></div> -->
+        <div id="power">
+          <div class="powerslide">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="1"
+              class="slider"
+              id="powerRange"
+            />
+            <p id="ppower">Power: <span id="powerfire"></span></p>
+          </div>
+        </div>
+        <div id="bullet">
+          <div id="b1">b1</div>
+          <div id="b2">b2</div>
+          <div id="bs">bs</div>
+        </div>
+        <div id="angle">
+          <button id="upangle">+</button>
+          <div id="showangle"></div>
+          <button id="downangle">-</button>
+        </div>
+      </div>
+      <div id="gamemain">
+        <div id="d1">
+          <img
+            id="d2"
+            src="teeth.png"
+            style="width: 20px; height: 20px"
+            alt=""
+          />
+          <div id="player1">
+            <div id="p1">
+              <img id="iplayer1" src="troll2.png" alt="" />
+              <div id="damage1"></div>
+              <div id="hp1"><div id="misshp1"></div></div>
+            </div>
+          </div>
+          <div id="player2">
+            <div id="p2">
+              <img id="iplayer2" src="xx.png" alt="" />
+              <div id="damage2"></div>
+              <div id="hp2"><div id="misshp2"></div></div>
+            </div>
+          </div>
+
+          <button id="p1f">Player 1 fire</button>
+          <button id="p2f">Player 2 fire</button>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!-- end -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB-txAR6ei1XuvL5gY2sVW3djxESnNMmcw",
+      authDomain: "mindgun.firebaseapp.com",
+      databaseURL: "https://mindgun.firebaseio.com",
+      projectId: "mindgun",
+      storageBucket: "mindgun.appspot.com",
+      messagingSenderId: "630337346216",
+      appId: "1:630337346216:web:5692a866389cf8c7cf409d",
+      measurementId: "G-KLE2RQBNYB",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    let db = firebase.firestore();
+    var database = firebase.database();
+  </script>
+  <script src="index.js" type="module"></script>
+</html>
